@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    table, td, th{
+        border:1px solid black;
+        border-collapse: separate;
+        text-align: center;
+    }
+</style>
+<body>
+    <div>
+        <h1>My Favorite fruits</h1>
+        <ul>
+            <li type ="i">Apple</li>
+            <li type ="i">Banana</li>
+            <li type ="i">Orange</li>
+        </ul>
+    </div>
+    <div>
+        <h1>My courses</h1>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th></th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+            </tr>
+            <tr>
+                <td bgcolor="yellow">Monday</td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td bgcolor="pink">Tuesday</td>
+                <td colspan="6">EN813706</td>
+            </tr>
+            <tr>
+                <td bgcolor="green">Wednesday</td>
+                <td colspan="6">EN842300</td>
+            </tr>
+            <caption>My courses</caption>
+        </table>
+    </div>
+    
+    <!-- <p>Click the button to get your coordinates.</p>
+    <button onclick="getLocation()">Try It</button>
+    <p id="demo"></p>
+    <script>
+        var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+    </script> -->
+</body>
