@@ -2,7 +2,7 @@ function readInput() {
     const inputList = [];
   
     while (true) {
-        const inputText = prompt("Enter a positive integer:");
+        const inputText = prompt("Enter an integer(a negative integer to quit):");
         
         if (isNaN(inputText) || inputText === ""){}
 
@@ -21,8 +21,7 @@ function displayStats(list) {
     const average = list.length > 0 ? list.reduce((a, b) => a + b, 0) / list.length : 0;
     const min = list.length > 0 ? Math.min(...list) : 0;
     const max = list.length > 0 ? Math.max(...list) : 0;
-    
-    // return [average, min, max];
+
     alert('For the list ' + list + ' the average is ' + average.toFixed(2) + ', the minimum is ' + min + ', and the maximum is ' + max) 
 }
 
