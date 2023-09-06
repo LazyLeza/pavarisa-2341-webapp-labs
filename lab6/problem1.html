@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    div {
+        width: 25%;
+        height: 100px;
+        margin: 5px 0px 5px 0px;
+        background-color: blue;
+        float: left;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let firstcolor = null;
+
+        for (let i =1; i <= 16; i++) {
+            const myDiv = document.createElement('div');
+            document.body.appendChild(myDiv);
+        }
+
+        const random = (number) => Math.floor(Math.random() * number);
+
+        const bgChange = () => 
+            'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+
+        const divs = document.querySelectorAll('div');
+
+        divs.forEach((div, index) => {
+            if (index % 2 === 0) {
+                div.onclick = (e) => {
+                    e.target.style.backgroundColor = bgChange();
+                };
+            } else {
+                div.onclick = (e) => {
+                    if (firstcolor === null) {
+                        firstcolor = bgChange();
+                    }
+                    e.target.style.backgroundColor = firstcolor;
+                };
+            }
+        });
+    </script>
+    
+</body>
+</html>
