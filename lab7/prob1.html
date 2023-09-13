@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+  </head>
+  <body>
+      <section>
+        <img src="images/kku.jpg" 
+           alt="Khon Kaen University">
+        <p>Here we will add a link to the 
+          <a href="https://www.mozilla.org/">Mozilla homepage</a>
+        </p>
+      </section>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+        var image = document.querySelector("img");
+        image.src = "https://www.en.kku.ac.th/web/wp-content/uploads/2020/09/119251435_321814239045994_7332192677894296447_n.jpg";
+        image.alt = "Faculty of Engineering";
+        image.style.width = "500px";
+
+        var newElements = document.getElementsByTagName('p');
+        for (let i = 0; i < newElements.length; i++) {
+          newElements[i].textContent = "We hope you enjoy learning";
+          newElements[i].style.color = "white";
+          newElements[i].style.background = "black";
+          newElements[i].style.display = "flex";
+          newElements[i].style.fontSize = "large";
+          newElements[i].style.padding = "10px";
+          newElements[i].style.justifyContent = "center";
+          newElements[i].style.marginRight = "50rem";
+        }
+
+        image.addEventListener("click", function() {
+          window.location.href = "https://www.en.kku.ac.th";
+        });
+
+
+        document.querySelector("title").textContent = "KKU Engineering";
+      });
+      </script>
+  </body>
+</html>
