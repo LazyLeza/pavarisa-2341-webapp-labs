@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .avatar-img {
+            border: 5px solid blue;
+            border-radius: 50%;
+            width: 200px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            }
+    </style>
+</head>
+<body>
+    <script>        
+    const contentDiv = document.createElement('div');
+    contentDiv.id = 'content';
+
+    const avatarImg = document.createElement('img');
+    avatarImg.classList.add('avatar-img');
+    avatarImg.id = 'avatar';
+    avatarImg.src = '';
+    avatarImg.alt = 'Avatar';
+
+    const usernameH1 = document.createElement('h1');
+    usernameH1.style.textAlign = 'center';
+
+    const usernameA = document.createElement('a');
+    usernameA.id = 'username';
+    usernameA.href = 'https://api.github.com/users/LazyLeza';
+    usernameA.target = '_blank';
+
+    usernameA.appendChild(document.createTextNode('LazyLeza')); 
+
+    usernameH1.appendChild(usernameA);
+
+    contentDiv.appendChild(usernameH1);
+    contentDiv.appendChild(avatarImg);
+
+    document.body.appendChild(contentDiv);
+
+    fetch('https://api.github.com/users/LazyLeza')
+    .then(response => response.json())
+    .then(data => {
+        const username = data.login;
+        const avatar = data.avatar_url;
+        document.getElementById('avatar').src = avatar;
+        document.getElementById('username').href = data.html_url;
+    });
+    </script>
+    
+</body>
+</html>
